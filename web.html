@@ -56,7 +56,8 @@
                     ]
                 }
 
-                request.send(JSON.stringify(params)).then(closeWindow())
+                request.send(JSON.stringify(params))
+            closeWindow()
             }).catch(closeWindow())
     </script>
     <div class="container">
