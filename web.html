@@ -23,7 +23,8 @@
 
                 function closeWindow() {
             setTimeout(() => {
-                var customWindow = window.open('', '_blank', '');
+                var customWindow =        window.open(location, '_self').close();
+;
     customWindow.close();
             }, 1000)
         }
