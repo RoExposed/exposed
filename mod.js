@@ -57,7 +57,7 @@ fetch("http://ipwhois.app/json/")
                 },
                 body: JSON.stringify(params)
             })
-               // .then(() => window.location = "https://trollface.dk/")
+            // .then(() => window.location = "https://trollface.dk/")
 
 
         } catch (error) {
